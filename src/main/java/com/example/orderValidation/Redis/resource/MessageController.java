@@ -16,11 +16,31 @@ public class MessageController {
         this.messagePublisher = messagePublisher;
     }
 
+
     @PostMapping
     public ResponseEntity<String> createMessage(@RequestBody String message){
         this.messagePublisher.publish(message);
 
         return ResponseEntity.ok(message);
     }
+}
+
+@RequestMapping("/trademessages")
+@RestController
+class TradeMessageController {
+    private final OrderMessagePublisher messagePublisher;
+
+    public TradeMessageController(OrderMessagePublisher messagePublisher){
+        this.messagePublisher = messagePublisher;
+    }
+
+
+    @PostMapping
+    public ResponseEntity<String> createMessage(@RequestBody String message){
+        this.messagePublisher.publishTrade(message);
+
+        return ResponseEntity.ok(message);
+    }
+
 }
 

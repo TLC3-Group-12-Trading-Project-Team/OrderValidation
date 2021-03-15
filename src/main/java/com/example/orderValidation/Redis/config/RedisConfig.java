@@ -18,7 +18,8 @@ public class RedisConfig {
     @Value("${redis.pubsub.channel.name}")
     private String channel;
 
-    private ChannelTopic subChannel = ChannelTopic.of("orderValidation");
+    private ChannelTopic reportingServiceChannel = ChannelTopic.of("reportingService");
+    private ChannelTopic tradingEngineChannel = ChannelTopic.of("tradingEngine");
 
     @Bean
     public LettuceConnectionFactory lettuceConnectionFactory() {
@@ -38,7 +39,8 @@ public class RedisConfig {
                                                                        MessageListenerAdapter messageListenerAdapter){
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(lettuceConnectionFactory);
-        container.addMessageListener(messageListenerAdapter, subChannel);
+        container.addMessageListener(messageListenerAdapter, reportingServiceChannel);
+        container.addMessageListener(messageListenerAdapter,tradingEngineChannel);
 
         return container;
     }
