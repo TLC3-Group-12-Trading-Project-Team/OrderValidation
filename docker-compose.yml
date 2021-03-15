@@ -1,0 +1,10 @@
+version: '2'
+services:
+  order-validation-service-prod:
+    container_name: order-validation-service-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: order-validation-service-prod
+    ports:
+      - 47000:47000
