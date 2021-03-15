@@ -1,0 +1,7 @@
+version: '2'
+services:
+  order-validation-service-prod:
+    container_name: order-validation-service-prod
+    image: elijahahianyo/trade-project:order-validation-service-prod
+    ports:
+      - 47000:47000
