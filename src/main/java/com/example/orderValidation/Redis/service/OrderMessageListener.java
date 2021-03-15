@@ -24,6 +24,7 @@ public class OrderMessageListener implements MessageListener {
             MessageDto msg = objectMapper.readValue(message.getBody(), MessageDto.class);
             if(msg != null) {
                 log.info("Channel: {}, Message: {}", new String(message.getChannel()), msg.getBody());
+
             }
         } catch (IOException e) {
             log.error("Couldn't convert json", e);
