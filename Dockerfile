@@ -16,4 +16,4 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 EXPOSE 47000
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.OrderValidation.OrderValidationApplication"]
+ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.orderValidation.OrderValidationApplication"]
