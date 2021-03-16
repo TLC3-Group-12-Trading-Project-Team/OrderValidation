@@ -5,3 +5,8 @@ services:
     image: elijahahianyo/trade-project:order-validation-service-prod
     ports:
       - 47000:47000
+    networks:
+      - trade_project
+
+networks:
+  trade-project:
