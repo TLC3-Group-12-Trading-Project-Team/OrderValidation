@@ -9,4 +9,4 @@ services:
       - trade_project
 
 networks:
-  trade-project:
+  trade_project:
