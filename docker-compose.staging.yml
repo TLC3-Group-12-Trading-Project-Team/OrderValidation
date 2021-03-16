@@ -7,6 +7,5 @@ services:
       - 47000:47000
     networks:
       - trade_project
-
 networks:
   trade_project:
