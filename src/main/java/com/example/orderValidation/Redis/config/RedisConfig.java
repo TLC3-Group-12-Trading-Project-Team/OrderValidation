@@ -20,7 +20,7 @@ public class RedisConfig {
 
     private ChannelTopic reportingServiceChannel = ChannelTopic.of("reportingService");
     private ChannelTopic tradingEngineChannel = ChannelTopic.of("tradingEngine");
-    
+
     @Bean
     public RedisTemplate<String, Object> redisTemplate(LettuceConnectionFactory lettuceConnectionFactory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
